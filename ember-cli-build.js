@@ -1,11 +1,33 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const pickFiles = require('broccoli-static-compiler');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    'ember-cli-foundation-6-sass': {
+      'foundationJs': 'all'
+    }
   });
+
+  // UQ Components for public sharing
+  var materializeUQComponents = pickFiles('bower_components/uq-its-ss-application-standard-components/css', {
+    srcDir: '/',
+    destDir: 'uq-standard/'
+  });
+
+  // myUQ fonts
+  var materializeUQfonts = pickFiles('bower_components/uq-its-ss-application-standard-components/fonts/myuq-icons/font', {
+    srcDir: '/',
+    destDir: 'fonts/myuq-icons/font/'
+  });
+
+  // Fontawesome fonts
+  var materializeFAfonts = pickFiles('bower_components/font-awesome/fonts', {
+    srcDir: '/',
+    destDir: 'bower_components/fontawesome/fonts/'
+  });
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -20,5 +42,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  return app.toTree([materializeUQfonts, materializeFAfonts, materializeUQComponents]);
 };

@@ -1,0 +1,7 @@
+{
+  "name": "megaportal-frontend-uq-components",
+  "dependencies": {
+    "font-awesome": "fontawesome#~4.5.0",
+    "uq-its-ss-application-standard-components": "http://d30tvld8feguc2.cloudfront.net/latest/assets.zip"
+  }
+}

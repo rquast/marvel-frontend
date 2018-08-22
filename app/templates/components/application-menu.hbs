@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <div class="sidebar__content">
+    <div class="sidebar__header-title">
+      {{#link-to "index"}}Marvel{{/link-to}}
+    </div>
+    <div>
+      <ul class="sidebar__menu">
+        {{#each menuItems as |item|}}
+        <li>
+          {{#link-to 'characters' class="menu__link" }}<span class="icon icon-{{item.icon}}" role="presentation"></span>{{item.name}}{{/link-to}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{yield}}
