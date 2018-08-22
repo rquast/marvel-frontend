@@ -1,7 +1,10 @@
-<div class="row small-collapse">
-
-{{application-menu menuItems=model.menuItems}}
-
-{{outlet}}
-
+<div class="row small-collapse" data-equalizer>
+  <div class="show-for-medium-up sidebar">
+    <div class="sidebar__content">
+      {{application-menu menuItems=model.menuItems}}
+    </div>
+  </div>
+  <div class="main-content">
+    {{outlet}}
+  </div>
 </div>

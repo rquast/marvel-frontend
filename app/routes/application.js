@@ -4,7 +4,16 @@ export default Route.extend({
   model() {
     return {
       menuItems: [
-        {icon: 'smile-o', name: 'Characters'}
+        {
+          route: 'series',
+          icon: 'film',
+          name: 'Series'
+        },
+        {
+          route: 'characters',
+          icon: 'smile-o',
+          name: 'Characters'
+        }
       ]
     };
   }
