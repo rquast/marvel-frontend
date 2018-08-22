@@ -8,7 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('characters');
-  this.route('series');
+  this.route('favourites');
 });
 
 export default Router;

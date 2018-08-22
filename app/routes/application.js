@@ -5,14 +5,14 @@ export default Route.extend({
     return {
       menuItems: [
         {
-          route: 'series',
-          icon: 'film',
-          name: 'Series'
-        },
-        {
           route: 'characters',
           icon: 'smile-o',
           name: 'Characters'
+        },
+        {
+          route: 'favourites',
+          icon: 'heart',
+          name: 'Favourites'
         }
       ]
     };
