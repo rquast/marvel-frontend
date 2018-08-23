@@ -10,6 +10,9 @@ module.exports = function(defaults) {
     }
   });
 
+  // muuri imports
+  var Muuri = app.import('vendor/muuri.min.js');
+
   // UQ Components for public sharing
   var materializeUQComponents = pickFiles('bower_components/uq-its-ss-application-standard-components/css', {
     srcDir: '/',
@@ -42,5 +45,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree([materializeUQfonts, materializeFAfonts, materializeUQComponents]);
+  return app.toTree([Muuri, materializeUQfonts, materializeFAfonts, materializeUQComponents]);
 };

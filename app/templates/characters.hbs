@@ -19,14 +19,7 @@
     <div class="large-12 column">
       <div class="section__content">
 
-        {{#each model as |character|}}
-          <div>
-            <img src={{character.thumbnail}}>
-            ID: {{character.id}}<br>
-            {{character.name}}<br>
-            {{character.description}}
-          </div>
-        {{/each}}
+        {{muuri-list characters=model}}
 
         {{outlet}}
 

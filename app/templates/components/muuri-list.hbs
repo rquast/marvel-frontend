@@ -1,0 +1,13 @@
+
+<div class="muuri-grid">
+{{#each characters as |character|}}
+  <div class="item">
+    <div class="item-content">
+      <img src={{character.thumbnail}} style="height: 140px;">
+      {{character.name}}
+    </div>
+  </div>
+{{/each}}
+</div>
+
+{{yield}}
