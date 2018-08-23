@@ -2,28 +2,5 @@
 @import 'foundation-sites/foundation';
 @import "foundation-sites/util/util";
 @include foundation-everything;
-
-.muuri-grid {
-  position: relative;
-}
-.item {
-  display: block;
-  position: absolute;
-  margin: 5px;
-  z-index: 1;
-}
-.item.muuri-item-dragging {
-  z-index: 3;
-}
-.item.muuri-item-releasing {
-  z-index: 2;
-}
-.item.muuri-item-hidden {
-  z-index: 0;
-}
-.item-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 240px;
-}
+@import "muuri";
+@import "card";
