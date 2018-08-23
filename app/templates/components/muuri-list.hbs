@@ -1,17 +1,19 @@
 <div class="muuri-grid">
 {{#each characters as |character|}}
   <div class="item">
-    <div class="item-content card card-hover">
-      <div class="card-divider">
-        {{character.name}}
+    <a {{action "selectCharacter" character}} class="item-link">
+      <div class="item-content card card-hover">
+        <div class="card-divider">
+          {{character.name}}
+        </div>
+        <img src={{character.thumbnail}}>
+        {{#if character.description}}
+        <div class="card-section">
+          {{character.description}}
+        </div>
+        {{/if}}
       </div>
-      <img src={{character.thumbnail}} style="width: 100%;">
-      {{#if character.description}}
-      <div class="card-section">
-        {{character.description}}
-      </div>
-      {{/if}}
-    </div>
+    </a>
   </div>
 {{/each}}
 </div>

@@ -22,3 +22,9 @@
   height: 100%;
   max-width: 240px;
 }
+.item-link:hover {
+  text-decoration: none;
+}
+.item-content > img {
+  width: 100%;
+}
