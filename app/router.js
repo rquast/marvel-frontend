@@ -14,8 +14,8 @@ const Router = EmberRouter.extend({
         $(".app-container").foundation();
         this.foundationLoaded = true;
       } else {
-        // TODO: fix this.. doesn't work with foundation 6
-        $(".app-container").foundation('equalizer', 'reflow');
+        // since foundation 6
+        window.Foundation.reInit('equalizer');
       }
       //Scroll to top
       window.scrollTo(0, 0);
@@ -24,9 +24,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('characters');
+  this.route('characters', function() {
+    this.route('view');
+  });
   this.route('favourites');
-  this.route('character-profile');
 });
 
 export default Router;
