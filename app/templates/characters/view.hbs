@@ -24,7 +24,11 @@
           <div class="column small-6">
             <h2 class="panel__title">{{model.name}}</h2>
             <div class="panel__content">{{model.description}}</div>
-            <a {{action "addToFavourites" model}} class="button">Add To Favourites</a>
+            {{#if model.favourite}}
+              <a {{action "removeFromFavourites" model}} class="button">Remove Favourite</a>
+            {{else}}
+              <a {{action "addToFavourites" model}} class="button">Add To Favourites</a>
+            {{/if}}
           </div>
           <div class="column small-6 panel__aside">
             <img src={{model.thumbnail}} class="profile-image">

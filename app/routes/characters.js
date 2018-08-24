@@ -9,8 +9,13 @@ export default Route.extend({
       this.transitionTo('characters.view', character);
     },
     addToFavourites(character) {
-      // TODO: use services for this business logic.
-      alert(character);
+      character.set('favourite', true);
+      character.save();
+    },
+    removeFromFavourites(character) {
+      character.set('favourite', false);
+      character.save();
     }
   }
+
 });
