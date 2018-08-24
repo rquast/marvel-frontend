@@ -1,3 +1,40 @@
-{{model.name}}
+<div class="page__header--desktop show-for-medium-up">
+  <div class="page__header-login-logout">
+    <div class="row">
+      <div class="large-12 column">
+        <div class="row">
+          <span class="page__header-greeting">Welcome,</span> <span class="page__header-user-name">Todo Sign-in</span> <a href="#" class="action action--circle action--logout right"><span class="icon icon-lock"></span></a>
+        </div>
+        <div class="row">
+          <div class="page__header-page-title">
+            <a href="#"><span class="icon icon-user icon--prefix"></span>Character Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page__content">
+  <div class="row">
+    <div class="large-12 column">
+    </div>
+    <div class="large-12 column">
+      <div class="section">
+        <div class="section__header">
+          <h3 class="section__title">{{model.name}}</h3>
+        </div>
+      </div>
+      <div class="section__content">
 
-{{outlet}}
+        <p>
+          {{model.description}}
+        </p>
+
+        <p>
+          <img src={{model.thumbnail}} class="profile-image">
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
