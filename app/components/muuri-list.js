@@ -1,12 +1,16 @@
 import Component from '@ember/component';
+import { scheduleOnce }  from '@ember/runloop';
+
 
 export default Component.extend({
   didInsertElement(){
-    new Muuri('.muuri-grid');
+    scheduleOnce('afterRender', this, () => {
+      new Muuri('.muuri-grid');
+    });
   },
   actions: {
-    selectCharacter(character) {
-      alert(character.id);
+    select(character) {
+      this.attrs.select(character);
     }
   }
 });

@@ -25,7 +25,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('characters', function() {
-    this.route('view');
+    this.route('view', { path: '/view/:characters_id' });
   });
   this.route('favourites');
 });
