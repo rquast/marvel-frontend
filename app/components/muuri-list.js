@@ -9,8 +9,8 @@ export default Component.extend({
     });
   },
   actions: {
-    select(character) {
-      this.attrs.select(character);
+    viewCharacter(character) {
+      this.select(character);
     }
   }
 });
