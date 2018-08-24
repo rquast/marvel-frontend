@@ -7,6 +7,10 @@ export default Route.extend({
   actions: {
     select(character) {
       this.transitionTo('characters.view', character);
+    },
+    addToFavourites(character) {
+      // TODO: use services for this business logic.
+      alert(character);
     }
   }
 });

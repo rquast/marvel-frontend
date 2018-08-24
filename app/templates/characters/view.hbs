@@ -19,21 +19,17 @@
     <div class="large-12 column">
     </div>
     <div class="large-12 column">
-      <div class="section">
-        <div class="section__header">
-          <h3 class="section__title">{{model.name}}</h3>
-        </div>
-      </div>
       <div class="section__content">
-
-        <p>
-          {{model.description}}
-        </p>
-
-        <p>
-          <img src={{model.thumbnail}} class="profile-image">
-        </p>
-
+        <div class="panel">
+          <div class="column small-6">
+            <h2 class="panel__title">{{model.name}}</h2>
+            <div class="panel__content">{{model.description}}</div>
+            <a {{action "addToFavourites" model}} class="button">Add To Favourites</a>
+          </div>
+          <div class="column small-6 panel__aside">
+            <img src={{model.thumbnail}} class="profile-image">
+          </div>
+        </div>
       </div>
     </div>
   </div>
