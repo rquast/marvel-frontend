@@ -7,11 +7,4 @@ export default DS.Model.extend({
   thumbnail: DS.attr('string'),
   resourceURI: DS.attr('string'),
   favourite: DS.attr('boolean')
-  /*
-  comics: DS.attr('array'),
-  series: DS.attr('array'),
-  stories: DS.attr('array'),
-  events: DS.attr('array'),
-  urls: DS.attr('array')
-  */
 });

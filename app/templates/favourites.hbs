@@ -17,17 +17,20 @@
 <div class="page__content">
   <div class="row">
     <div class="large-12 column">
+    </div>
+    <div class="large-12 column">
+      <div class="section">
+        <div class="section__header">
+          <h3 class="section__title">Select a character</h3>
+        </div>
+      </div>
       <div class="section__content">
 
-        {{#each model as |character|}}
-          <div>
-            ID: {{character.id}}<br>
-            {{character.name}}<br>
-            {{character.description}}
-          </div>
-        {{/each}}
+        <p>
+          Select a character to learn more about it.
+        </p>
 
-        {{outlet}}
+        {{muuri-list characters=model select=(action send "select")}}
 
       </div>
     </div>
