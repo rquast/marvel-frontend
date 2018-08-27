@@ -23,6 +23,12 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: 'http://127.0.0.1:8000/login/do',
+    refreshAccessTokens: false,
+    refreshLeeway: 300 // refresh 5 minutes (300 seconds) before expiration
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
