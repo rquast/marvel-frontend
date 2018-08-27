@@ -6,17 +6,21 @@ import { inject } from '@ember/service';
 
 const Router = EmberRouter.extend({
   session: inject('session'),
+  routing: inject('-routing'),
   location: config.locationType,
   rootURL: config.rootURL,
   foundationLoaded: false,
-  willTransition: function() {
+  willTransition: function(transition) {
+    this._super(transition);
     if (this.get('session') && this.get('session').isAuthenticated) {
       return true;
     } else {
       this.transitionTo('login');
     }
   },
-  didTransition: function() {
+  didTransition: function(transition) {
+    this._super(transition);
+    // console.log(transition);
     scheduleOnce('afterRender', this, () => {
       //Enable Foundation
       if (!this.foundationLoaded) {
@@ -33,7 +37,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('login');
+  this.route('login', { path: '/login' });
   this.route('characters', function() {
     this.route('view', { path: '/view/:characters_id' });
   });

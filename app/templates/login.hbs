@@ -1,7 +1,34 @@
-<form {{action 'authenticate' on='submit'}}>
-  <label for="username">Login</label>
-  {{input id='username' placeholder='Enter Login' value=username}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
-  <button type="submit">Login</button>
-</form>
+<div class="page__header--desktop show-for-medium-up">
+  <div class="page__header-login-logout">
+    <div class="row">
+      <div class="large-12 column">
+        <div class="row">
+          <span class="page__header-greeting">Welcome,</span> <span class="page__header-user-name">Todo Sign-out</span> <a href="#" class="action action--circle action--logout right"><span class="icon icon-lock"></span></a>
+        </div>
+        <div class="row">
+          <div class="page__header-page-title">
+            <a href="#"><span class="icon icon-lock icon--prefix"></span>Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page__content">
+  <div class="row">
+    <div class="large-12 column">
+      <div class="section__content">
+        <form {{action 'authenticate' on='submit'}}>
+          <label for="username">Username</label>
+          {{input id='username' placeholder='Enter Username' value=username}}
+          <label for="password">Password</label>
+          {{input id='password' placeholder='Enter Password' type='password' value=password}}
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

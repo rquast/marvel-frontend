@@ -5,7 +5,13 @@ import { scheduleOnce }  from '@ember/runloop';
 export default Component.extend({
   didInsertElement(){
     scheduleOnce('afterRender', this, () => {
-      new Muuri('.muuri-grid');
+      // note: foundation is probably not resizing the page until after after render
+      setTimeout(() => {
+        new Muuri('.muuri-grid', {
+          layoutOnResize: 200,
+          layoutOnInit: true
+        });
+      }, 200);
     });
   },
   actions: {

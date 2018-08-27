@@ -2,11 +2,13 @@
 <hr>
 <div>
   <ul class="sidebar__menu">
-    {{#each menuItems as |item|}}
+    {{#each-in menuItems as |key item|}}
+      {{#if item.menu}}
       <li>
         {{#link-to item.route class="menu__link"}}<span class="icon icon-{{item.icon}}"></span>{{item.name}}{{/link-to}}
       </li>
-    {{/each}}
+      {{/if}}
+    {{/each-in}}
   </ul>
 </div>
 {{yield}}
