@@ -20,7 +20,6 @@ const Router = EmberRouter.extend({
   },
   didTransition: function(transition) {
     this._super(transition);
-    // console.log(transition);
     scheduleOnce('afterRender', this, () => {
       //Enable Foundation
       if (!this.foundationLoaded) {

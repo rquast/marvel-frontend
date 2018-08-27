@@ -17,13 +17,15 @@
 <div class="page__content">
   <div class="row">
     <div class="large-12 column">
-      <div class="section__content">
+      <div class="section__content margin-12">
         <form {{action 'authenticate' on='submit'}}>
-          <label for="username">Username</label>
-          {{input id='username' placeholder='Enter Username' value=username}}
-          <label for="password">Password</label>
-          {{input id='password' placeholder='Enter Password' type='password' value=password}}
-          <button type="submit">Login</button>
+          <fieldset>
+            <label for="username">Username</label>
+            {{input id='username' placeholder='Enter Username' value=username}}
+            <label for="password">Password</label>
+            {{input id='password' placeholder='Enter Password' type='password' value=password}}
+            <button type="submit" class="btn btn-primary">Login</button>
+          </fieldset>
         </form>
       </div>
     </div>
