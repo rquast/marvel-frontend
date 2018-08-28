@@ -6,6 +6,11 @@ import { computed } from '@ember/object';
 export default Component.extend({
   session: inject('session'),
   sessionData: computed('session.session.content.authenticated', function() {
-    return JSON.stringify(this.get('session.session.content.authenticated'), null, '\t');
-  })
+    return this.get('session.session.content.authenticated');
+  }),
+  actions: {
+    invalidateSession: function() {
+      this.get('session').invalidate();
+    }
+  }
 });

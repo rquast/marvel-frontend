@@ -1,4 +1,6 @@
-{{log session}}
-{{sessionData}}
-<span class="page__header-greeting">Welcome,</span> <span class="page__header-user-name">Todo Sign-out</span> <a href="#" class="action action--circle action--logout right"><span class="icon icon-lock"></span></a>
+{{#if session.isAuthenticated}}
+<span class="page__header-greeting">Welcome, {{sessionData.tokenData.username}}</span> <span class="page__header-user-name">Sign-out</span> <a {{ action 'invalidateSession' }} class="action action--circle action--logout right"><span class="icon icon-lock"></span></a>
+{{else}}
+<span class="page__header-user-name">Login</span> {{#link-to 'login' class="action action--circle action--logout right"}}<span class="icon icon-lock"></span>{{/link-to}}
+{{/if}}
 {{yield}}
