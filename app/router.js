@@ -6,18 +6,9 @@ import { inject } from '@ember/service';
 
 const Router = EmberRouter.extend({
   session: inject('session'),
-  routing: inject('-routing'),
   location: config.locationType,
   rootURL: config.rootURL,
   foundationLoaded: false,
-  willTransition: function(transition) {
-    this._super(transition);
-    if (this.get('session') && this.get('session').isAuthenticated) {
-      return true;
-    } else {
-      this.transitionTo('login');
-    }
-  },
   didTransition: function(transition) {
     this._super(transition);
     scheduleOnce('afterRender', this, () => {

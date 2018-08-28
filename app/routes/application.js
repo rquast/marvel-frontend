@@ -25,5 +25,15 @@ export default Route.extend({
         }
       }
     };
+  },
+  actions: {
+    error(error, transition) {
+      if (error.errors.length > 0) {
+        if (error.errors[0].status === '401') {
+          transition.abort();
+          this.transitionTo('login');
+        }
+      }
+    }
   }
 });
