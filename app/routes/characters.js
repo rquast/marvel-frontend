@@ -11,11 +11,15 @@ export default Route.extend({
     },
     addToFavourites(character) {
       character.set('favourite', true);
-      character.save();
+      character.save().then(() => {
+        this.transitionTo('favourites');
+      });
     },
     removeFromFavourites(character) {
       character.set('favourite', false);
-      character.save();
+      character.save().then(() => {
+        this.transitionTo('characters');
+      });
     }
   }
 });
