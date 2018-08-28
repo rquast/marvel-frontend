@@ -7,10 +7,13 @@ export default Component.extend({
     scheduleOnce('afterRender', this, () => {
       // note: foundation is probably not resizing the page until after after render
       setTimeout(() => {
-        new Muuri('.muuri-grid', {
+        let grid = new Muuri('.muuri-grid', {
           layoutOnResize: 200,
           layoutOnInit: true
         });
+        grid.layout(() => {
+          window.Foundation.reInit('equalizer');
+        })
       }, 200);
     });
   },
